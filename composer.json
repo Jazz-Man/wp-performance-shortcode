@@ -1,0 +1,41 @@
+{
+    "name": "jazzman/wp-performance-shortcode",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vasyl Sokolik",
+            "email": "vsokolyk@gmail.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
+    },
+    "require": {
+        "composer/installers": "^1.8",
+        "jazzman/autoload-interface": "^0.1.0"
+    }
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-master",
+        "roots/wordpress": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "JazzMan\\Shortcode\\":"src"
+        },
+        "files": [
+            "src/helper.php"
+        ]
+    },
+    "extra": {
+        "installer-paths": {
+            "vendor/wp/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+            "vendor/wp/plugins/{$name}/": ["type:wordpress-plugin"],
+            "vendor/wp/themes/{$name}/": ["type:wordpress-theme"]
+        },
+        "wordpress-install-dir": "vendor/wp"
+    }
+}
